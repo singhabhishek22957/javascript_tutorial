@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>color Changer</title>
+  <style>
+    .button {
+      width: 100px;
+      height: 100px;
+      font-size: 18px;
+      text-align: center;
+      vertical-align: middle;
+      border: 2px solid black;
+    }
+
+    #grey {
+      background-color: grey;
+      color: white;
+
+    }
+
+    #green {
+      background-color: green;
+      color: white;
+
+    }
+
+    #red {
+      background-color: red;
+      color: white;
+
+    }
+
+    #white {
+      background-color: white;
+      color: black;
+      gap: 30px;
+
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="btn">Color Change</button>
+
+  <div class="buttons">
+    <span class="button" id="grey">grey</span>
+    <span class="button" id="red">red</span>
+    <span class="button" id="green">green</span>
+    <span class="button" id="white">white</span>
+  </div>
+
+
+
+  <script>
+     let btn = document.getElementById('btn')
+     btn.addEventListener('click',addColor)
+    let buttons = document.querySelectorAll(".button")
+
+   
+    
+    console.log(buttons);
+    
+    buttons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        console.log(e.target.id);
+        // if(e.target.id ==="red"){
+        //   e.target.id = "pink"
+        // }
+        let color = e.target.id;
+        document.querySelector("body").style.backgroundColor = color
+
+
+
+      })
+    })
+
+   
+    function addColor(){
+      let span = document.createElement('span')
+    colorValue = prompt("Enter a Color Name that you want in background of the page : ")
+    console.log(colorValue);
+    span.setAttribute("id",colorValue)
+    span.classList.add("button")
+    if(colorValue!='white'){
+      span.style.color= "white"
+
+    }else{
+      span.style.color= "black"
+    }
+    span.style.backgroundColor=colorValue
+    span.appendChild(document.createTextNode(colorValue))
+    document.querySelector('.buttons').appendChild(span)
+
+
+    }
+
+
+
+  </script>
+</body>
+
+</html>

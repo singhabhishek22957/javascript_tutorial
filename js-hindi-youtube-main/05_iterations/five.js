@@ -4,7 +4,7 @@ const coding = ["js", "ruby", "java", "python", "cpp"]
 //     console.log(val);
 // } )
 
-// coding.forEach( (item) => {
+// coding.forEac                                            h( (item) => {
 //     console.log(item);
 // } )
 

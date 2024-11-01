@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+</head>
+<body>
+
+  <div id="container">
+    <form action="">
+      <p><label for="height">Height in CM</label><input value="0"  type="number" id="height" class="height"></p>
+      <p><label for="height">weight in KG</label><input value="0"  type="number" id="weight"class="weight"></p>
+      <p><input value="Calculate"   type="submit" id="submit"class="submit"></p>
+    </form>
+    <p id="display" style="display: block;"></p>
+  </div>
+  <div>
+    <h3>BMI Weight Guide</h3>
+    <p id="under">Under Weight = less than 18.6</p>
+    <p id="normal">Normal Range = 18.6 and 24.9</p>
+    <p id="over">Overweight = Grater than 24.9</p>
+  </div>
+  <script>
+    let height = parseInt(document.getElementById('height').value)
+    let weight = parseInt(document.getElementById('weight').value)
+    let form = document.querySelector('form')
+    let under = document.getElementById('under')
+    let normal = document.getElementById('normal')
+    let over = document.getElementById('over')
+
+    form.addEventListener('submit',(e)=>{
+      e.preventDefault()
+      if((height==='' || height<0 || isNaN(height)) || (weight==='' || weight<0 || isNaN(weight))){
+        alert('Please enter your height and Weight')
+      }
+      
+      
+    })
+
+  </script>
+</body>
+</html>

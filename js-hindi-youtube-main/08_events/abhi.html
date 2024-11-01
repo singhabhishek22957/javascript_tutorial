@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>async</title>
+
+</head>
+<body>
+  <button id="stop">Stop</button>
+  <h1 id="h1">Chai aur Code</h1>
+  <div id="container"></div>
+  
+  
+
+  <script>
+    function sayHello(){
+      document.querySelector("#h1").innerHTML = "Happy Diwali";
+
+      
+    }
+
+    document.querySelector('#stop').addEventListener('click',(e)=>{
+      // clearTimeout(timeout)
+      clearInterval(RamJi)
+    })
+
+
+    const RamJi = setInterval(() => {
+      let para = document.createElement('p')
+      para.setAttribute('class',"ramJi")
+      para.appendChild(document.createTextNode("Jai Shree Sita Ram Ji"))
+      document.querySelector("#container").appendChild(para)
+      
+    }, 1000);
+
+    const timeout = setTimeout(sayHello,2000);
+    // setInterval(sayHello,2000)
+  </script>
+</body>
+</html>r

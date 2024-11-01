@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Checker</title>
+
+  <style>
+    td{
+      border: 1px solid #ddd; padding: 8px;
+    }
+  </style>
+</head>
+<body style="scroll-behavior: smooth;">
+
+  <div id="project5">
+    <h1 id="key"> KeyChecker</h1>
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+      <tr >
+        <td>Key</td>
+        <td>Key Code</td>
+        <td>Code</td>
+      </tr>
+      
+      
+    </table>
+    
+  </div>
+  
+
+  
+  
+
+  <script>
+
+    
+
+    const pro = document.querySelector('#project5')
+    window.addEventListener('keydown',(e)=>{
+      console.log(e.key);
+      console.log(e.keyCode);
+      console.log(e.code);
+      let table = document.querySelector('table')
+      let row = document.createElement('tr')
+
+      let key = document.createElement('td')
+      let keyCode = document.createElement('td')
+      let code = document.createElement('td')
+      key.appendChild(document.createTextNode(e.key))
+      keyCode.appendChild(document.createTextNode(e.keyCode))
+      code.appendChild(document.createTextNode(e.code))
+      row.appendChild(key )
+      row.appendChild(keyCode)
+      row.appendChild(code)
+      table.appendChild(row)
+
+      
+    })
+
+    
+  </script>
+</body>
+</html>

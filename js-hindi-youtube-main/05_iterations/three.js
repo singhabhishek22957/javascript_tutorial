@@ -11,7 +11,7 @@ for (const num of arr) {
 
 const greetings = "Hello world!"
 for (const greet of greetings) {
-    //console.log(`Each char is ${greet}`)
+    // console.log(`Each char is ${greet}`)
 }
 
 // Maps
@@ -34,7 +34,8 @@ const myObject = {
     game2: 'Spiderman'
 }
 
-// for (const [key, value] of myObject) {
+// for (const [key, value] of myObject) {     // it gives error object are not irritable 
+
 //     console.log(key, ':-', value);
     
 // }

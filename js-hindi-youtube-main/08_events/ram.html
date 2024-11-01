@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ram Ji</title>
+</head>
+<body>
+
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+
+  <div id="hanuman">
+
+  </div>
+  
+  <script>
+    let hanuman = document.getElementById("hanuman");
+    const randomColor = ()=>{
+      const hex = "0123456789ABCDEF"
+      let color = "#"
+      for (let i = 0; i < 6; i++) {
+        color+=hex[Math.floor(Math.random()*16)] 
+      }
+
+      return color;
+     
+
+    }
+    let interval ;
+    const startSay = ()=>{
+      interval =setInterval(()=>{
+      let para =  document.createElement("p")
+      para.appendChild(document.createTextNode("Jai Shree Sita Ram Ji",Date.now()))
+      para.style.color = randomColor();
+      hanuman.appendChild(para)
+
+    },2000)
+    }
+    document.querySelector('#start').addEventListener('click',startSay)
+    document.querySelector('#stop').addEventListener('click',(e)=>{
+      clearInterval(interval)
+      interval = null;
+    })
+  </script>
+</body>
+</html>

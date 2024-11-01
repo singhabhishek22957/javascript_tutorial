@@ -51,13 +51,13 @@ const user = {
 }
 
 function handleObject(anyobject){
-    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.prices}`);
 }
 
-// handleObject(user)
+handleObject(user)
 handleObject({
     username: "sam",
-    price: 399
+    prices: 399
 })
 
 const myNewArray = [200, 400, 100, 600]

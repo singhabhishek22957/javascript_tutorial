@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamically Change Background Color</title>
+
+  <style>
+    #message_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body id="body">
+
+  <div id="message_container">
+    <h4 id="message"></h4>
+  </div>
+
+  <script>
+    const body = document.querySelector("#body");
+    const messageElement = document.getElementById("message");
+
+    window.addEventListener('dblclick', () => { // Use 'dblclick' for double-click detection
+      console.log('Double click detected!');
+      const color = prompt("Enter a color:");
+
+      if (color) { // Proceed if the user entered a color
+        body.style.backgroundColor = color;
+
+        // Clear the previous message before adding a new one
+        messageElement.textContent = `Background color changed to ${color}`;
+      }
+    });
+  </script>
+
+</body>
+</html>
